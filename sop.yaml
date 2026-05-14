@@ -1,0 +1,28 @@
+name: qa-wiki
+version: "1.0"
+wiki_local_path: /home/zhouhuijuan1987/wiki/qa-wiki
+repo: divanoo65/qa-wiki
+
+notify:
+  telegram:
+    token_env: YOUTUBE_WIKI_TG_TOKEN
+    chat_id: "6938920500"
+
+terminal_paths:
+  - wiki/**
+  - log.md
+  - logs/pipeline-runs/**
+
+pipeline:
+  - stage: wiki-build
+    trigger: raw/direct-links/**
+    webhook_route: sop-wiki-build
+    params:
+      build_mode: incremental
+      source_dir: raw/direct-links
+
+  - stage: tg-notify
+    trigger: index.md
+    webhook_route: sop-tg-notify
+    params:
+      build_mode: notify

@@ -1,0 +1,33 @@
+name: SOP Pipeline
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'raw/**'
+      - 'index.md'
+
+concurrency:
+  group: sop-pipeline-${{ github.repository }}
+  cancel-in-progress: false
+
+jobs:
+  route:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Install pyyaml
+        run: pip install pyyaml --quiet
+
+      - name: Run SOP Router
+        env:
+          HERMES_WEBHOOK_BASE: ${{ vars.HERMES_WEBHOOK_BASE || secrets.HERMES_WEBHOOK_BASE || 'https://hermes-webhooks.vyibc.com/webhooks' }}
+          HERMES_SOP_SECRET: ${{ vars.HERMES_WEBHOOK_TOKEN != '' && vars.HERMES_WEBHOOK_TOKEN || secrets.HERMES_WEBHOOK_TOKEN }}
+          BEFORE_SHA: ${{ github.event.before }}
+          AFTER_SHA: ${{ github.sha }}
+          RUN_ID: gh-${{ github.run_id }}-${{ github.run_attempt }}
+          REPO: ${{ github.repository }}
+        run: python3 .github/scripts/sop_router.py

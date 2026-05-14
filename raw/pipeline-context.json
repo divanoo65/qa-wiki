@@ -1,0 +1,17 @@
+{
+  "stage_c": {
+    "run_id": "gh-25858551719-1",
+    "start_time": "2026-05-14T11:56:03Z",
+    "end_time": "2026-05-14T11:56:41Z",
+    "duration_s": 38,
+    "llm_calls": 11,
+    "pages_created": 9,
+    "sources": 1,
+    "entities": 2,
+    "concepts": 6,
+    "comparisons": 0,
+    "prompt_tokens": 8956,
+    "completion_tokens": 7074,
+    "status": "success"
+  }
+}

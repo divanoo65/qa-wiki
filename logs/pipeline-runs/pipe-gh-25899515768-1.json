@@ -1,0 +1,29 @@
+{
+  "stage_c": {
+    "run_id": "gh-25899515768-1",
+    "start_time": "2026-05-15T04:04:14Z",
+    "end_time": "2026-05-15T04:08:59Z",
+    "duration_s": 284,
+    "llm_calls": 15,
+    "pages_created": 32,
+    "sources": 2,
+    "entities": 12,
+    "concepts": 18,
+    "comparisons": 0,
+    "prompt_tokens": 14656,
+    "completion_tokens": 24752,
+    "status": "success"
+  },
+  "stage_b": {
+    "run_id": "gh-25899515768-1",
+    "status": "success",
+    "processed_urls": [],
+    "processed_sources": [
+      "raw/direct-links/harness-agent-architecture-qa.md",
+      "raw/direct-links/pipeline-reliability-design-qa.md"
+    ],
+    "videos_processed": 0,
+    "source_title": "Harness Agent 架构设计问答精粹 + Pipeline 可靠性设计问答精粹"
+  },
+  "tg_summary": "[KNOWLEDGE-QA] ✅ 一遍过\n\n📚 Harness Agent 架构设计问答精粹 + Pipeline 可靠性设计问答精粹\n\n⏱️ 耗时：Stage C 284s\n🔢 Token：39,408（↑14,656 / ↓24,752）\n\n📊 知识图谱：\n  Source 2 / Entity 12 / Concept 18 / 总 32 页\n\n🟢 Entities：\n· agent-brain-plugins\n· gemini\n· harness-agent\n· hermes-llm\n· intent-router-agent\n· notebooklm\n· pipeline-creator\n· reflection-agent\n· sop-content-transform\n· sop-notebooklm-research\n· sop-tg-notify\n· sop-wiki-build\n\n🟡 Concepts：\n· LLM边界原则\n· skill\n· sop\n· 代码自检\n· 健康契约\n· 内容验证\n· 动作先解析\n· 失败模式\n· 意图契约\n· 意图路由器\n· 接口虚拟化\n· 根因路由\n· 流水线\n· 编排\n· 解耦原则\n· 评估引擎\n· 配置驱动\n· 阶段守卫\n\n🔗 入口：\n  · Harness Agent 架构设计问答精粹\n    https://github.com/divanoo65/qa-wiki/blob/main/wiki/sources/harness-agent-架构设计问答精粹.md\n  · Pipeline 可靠性设计问答精粹\n    https://github.com/divanoo65/qa-wiki/blob/main/wiki/sources/pipeline-可靠性设计问答精粹.md\n  · 知识图谱索引\n    https://github.com/divanoo65/qa-wiki\n\nrun_id: gh-25899515768-1"
+}
